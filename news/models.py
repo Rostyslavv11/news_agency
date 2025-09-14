@@ -33,7 +33,8 @@ class Newspaper(models.Model):
 
 class Redactor(AbstractUser):
     years_of_experience = models.IntegerField(
-        validators=[MinValueValidator(0)]
+        validators=[MinValueValidator(0)],
+        default=0
     )
 
     def __str__(self):
