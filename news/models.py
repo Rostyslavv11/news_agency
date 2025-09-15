@@ -18,7 +18,7 @@ class Newspaper(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
     published_date = models.DateField(auto_now_add=True)
-    topic = models.ManyToManyField(Topic, related_name="newspapers")
+    topics = models.ManyToManyField(Topic, through="NewspaperTopic", related_name="newspapers")
     publishers = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
         related_name="newspapers"
@@ -29,6 +29,18 @@ class Newspaper(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class NewspaperTopic(models.Model):
+    content = models.TextField()
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    newspaper = models.ForeignKey(Newspaper, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ("topic", "newspaper")
+
+    def __str__(self):
+        return f"{self.newspaper} - {self.topic}"
 
 
 class Redactor(AbstractUser):
