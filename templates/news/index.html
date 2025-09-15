@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  <h1>News Agency Home</h1>
+    <p>Welcome to the Most interesting News Agency Ever!</p>
+    <h2>You can add or edit your own newspapers</h2>
+    <p>The News Agency has the following record counts:</p>
+    <ul>
+        <li><strong>Topics:</strong> {{ number_of_topics }}</li>
+        <li><strong>Redactors:</strong> {{ number_of_redactors }}</li>
+        <li><strong>Newspapers:</strong> {{ number_of_newspapers }}</li>
+    </ul>
+    <p>Last published newspaper: {{ last_newspaper }}</p>
+{% endblock %}
