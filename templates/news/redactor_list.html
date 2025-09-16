@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if redactor_list %}
+    <ul>
+      {% for redactor in redactor_list %}
+        <li>
+          {{ redactor }}
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <p>There are no redactors in news agency!</p>
+  {% endif %}
+{% endblock %}

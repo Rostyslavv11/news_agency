@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<ul class="sidebar-nav list-group">
+  <li class="list-group-item"><a href="{% url 'news:index' %}">Home</a></li>
+  <li class="list-group-item"><a href="{% url 'news:topic-list' %}">All topics</a></li>
+  <li class="list-group-item"><a href="{% url 'news:newspaper-list' %}">All newspapers</a></li>
+  <li class="list-group-item"><a href="{% url 'news:redactor-list' %}">All redactors</a></li>
+</ul>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if topic_list %}
+    <ul>
+      {% for topic in topic_list %}
+        <li>
+          {{ topic }}
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <p>There are no topics in news agency!</p>
+  {% endif %}
+{% endblock %}

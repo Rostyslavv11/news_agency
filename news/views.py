@@ -1,4 +1,7 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.views import generic
+
 from news.models import Topic, Redactor, Newspaper
 
 
@@ -16,3 +19,22 @@ def index(request):
     }
 
     return render(request, "news/index.html", context=context)
+
+
+class TopicListView(LoginRequiredMixin, generic.ListView):
+    model = Topic
+    paginate_by = 5
+    template_name = "news/topic_list.html"
+
+
+class NewspaperListView(LoginRequiredMixin, generic.ListView):
+    model = Newspaper
+    paginate_by = 5
+    template_name = "news/newspaper_list.html"
+
+
+
+class RedactorListView(LoginRequiredMixin, generic.ListView):
+    model = Redactor
+    paginate_by = 5
+    template_name = "news/redactor_list.html"
