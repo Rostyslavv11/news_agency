@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if topic %}
+    <h1>{{ topic.name }} (All newspapers that have this topic)</h1>
+    <ul>
+      {% for new in newspapers_of_topic %}
+        <li>{{ new }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}

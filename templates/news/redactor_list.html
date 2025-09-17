@@ -5,7 +5,7 @@
     <ul>
       {% for redactor in redactor_list %}
         <li>
-          {{ redactor }}
+          <a href="{% url 'news:redactor-detail' pk=redactor.id %}">{{ redactor }}</a>
         </li>
       {% endfor %}
     </ul>

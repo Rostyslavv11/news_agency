@@ -5,7 +5,7 @@
     <ul>
       {% for topic in topic_list %}
         <li>
-          {{ topic }}
+          <a href="{% url 'news:topic-detail' pk=topic.id %}">{{ topic }}</a>
         </li>
       {% endfor %}
     </ul>
