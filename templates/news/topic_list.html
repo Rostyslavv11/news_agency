@@ -2,6 +2,8 @@
 
 {% block content %}
   {% if topic_list %}
+    <h1>Topics:</h1>
+    <a href="{% url 'news:topic-create' %}" class="btn btn-primary link-to-page">Create</a>
     <ul>
       {% for topic in topic_list %}
         <li>

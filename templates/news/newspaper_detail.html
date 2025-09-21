@@ -33,5 +33,7 @@
         <p>No redactors in newspaper!</p>
       {% endif %}
       )</p>
+    <a href="{% url 'news:newspaper-update' pk=newspaper.id %}" class="btn btn-warning">Update</a>
+    <a href="{% url 'news:newspaper-delete' pk=newspaper.id %}" class="btn btn-danger">Delete</a>
   {% endif %}
 {% endblock %}

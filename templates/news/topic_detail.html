@@ -8,5 +8,7 @@
         <li>{{ new }}</li>
       {% endfor %}
     </ul>
+    <a href="{% url 'news:topic-update' pk=topic.id %}" class="btn btn-warning">Update</a>
+    <a href="{% url 'news:topic-delete' pk=topic.id %}" class="btn btn-danger">Delete</a>
   {% endif %}
 {% endblock %}

@@ -2,6 +2,10 @@
 
 {% block content %}
   {% if newspaper_list %}
+    <h1>Newspapers:</h1>
+    <a href="{% url 'news:newspaper-create' %}" class="btn btn-primary link-to-page">
+      Create
+    </a>
     <ul>
       {% for newspaper in newspaper_list %}
         <li>
