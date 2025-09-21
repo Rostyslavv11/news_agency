@@ -3,4 +3,14 @@
   <li class="list-group-item"><a href="{% url 'news:topic-list' %}">All topics</a></li>
   <li class="list-group-item"><a href="{% url 'news:newspaper-list' %}">All newspapers</a></li>
   <li class="list-group-item"><a href="{% url 'news:redactor-list' %}">All redactors</a></li>
+  <li class="list-group-item">
+    {% if user.is_authenticated %}
+      <form method="post" action="{% url 'logout' %}" class="d-inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-link p-0 text-danger">🚪 Log out</button>
+      </form>
+    {% else %}
+      <a href="{% url 'login' %}" class="text-success">🔑 Log in</a>
+    {% endif %}
+  </li>
 </ul>
