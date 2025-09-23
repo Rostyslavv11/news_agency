@@ -1,9 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
+from django.db import transaction
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
 from news.models import Topic, Redactor, Newspaper
+from .forms import NewspaperForm, NewspaperTopicFormSet
 
 
 def index(request):
@@ -69,16 +71,48 @@ class NewspaperDetailView(LoginRequiredMixin, generic.DetailView):
 
 class NewspaperCreateView(LoginRequiredMixin, generic.CreateView):
     model = Newspaper
-    fields = "__all__"
+    form_class = NewspaperForm
     success_url = reverse_lazy("news:newspaper-list")
     template_name = "news/newspaper_form.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["formset"] = NewspaperTopicFormSet(self.request.POST or None)
+        return context
+
+    @transaction.atomic
+    def form_valid(self, form):
+        context = self.get_context_data()
+        formset = context["formset"]
+
+        if formset.is_valid():
+            self.object = form.save()
+            formset.instance = self.object
+            formset.save()
+            return redirect(self.get_success_url())
+        return self.form_invalid(form)
 
 class NewspaperUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Newspaper
-    fields = "__all__"
+    form_class = NewspaperForm
     template_name = "news/newspaper_form.html"
     success_url = reverse_lazy("news:newspaper-list")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["formset"] = NewspaperTopicFormSet(self.request.POST or None, instance=self.object)
+        return context
+
+    @transaction.atomic
+    def form_valid(self, form):
+        context = self.get_context_data()
+        formset = context["formset"]
+
+        if formset.is_valid():
+            self.object = form.save()
+            formset.save()
+            return redirect(self.get_success_url())
+        return self.form_invalid(form)
 
 
 class NewspaperDeleteView(LoginRequiredMixin, generic.DeleteView):

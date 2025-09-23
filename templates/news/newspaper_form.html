@@ -6,6 +6,29 @@
   <form action="" method="post" novalidate>
     {% csrf_token %}
     {{ form|crispy }}
+    
+    <h3>Topics</h3>
+    {{ formset.management_form }}
+  
+    {% if formset.non_form_errors %}
+      <div class="alert alert-danger">
+        {{ formset.non_form_errors }}
+      </div>
+    {% endif %}
+
+    {% for f in formset %}
+      <div class="card mb-3">
+        <div class="card-body">
+          {{ f|crispy }}
+
+          {% if f.can_delete %}
+            <div class="form-check mt-2">
+              {{ f.DELETE }} <label class="form-check-label">Delete</label>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
     <input type="submit" value="Submit" class="btn btn-primary">
   </form>
 {% endblock %}
