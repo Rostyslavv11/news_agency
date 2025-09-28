@@ -68,6 +68,15 @@ class NewspaperListView(LoginRequiredMixin, generic.ListView):
 class NewspaperDetailView(LoginRequiredMixin, generic.DetailView):
     model = Newspaper
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context["can_edit"] = (
+                user.is_authenticated
+                and self.object.publishers.filter(pk=user.pk).exists()
+        )
+        return context
+
 
 class NewspaperCreateView(LoginRequiredMixin, generic.CreateView):
     model = Newspaper
@@ -125,27 +134,8 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
     model = Redactor
     paginate_by = 5
     template_name = "news/redactor_list.html"
+    ordering = ["username"]
 
 
 class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Redactor
-
-
-class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
-    model = Redactor
-    fields = "__all__"
-    success_url = reverse_lazy("news:redactor-list")
-    template_name = "news/redactor_form.html"
-
-
-class RedactorUpdateView(LoginRequiredMixin, generic.UpdateView):
-    model = Redactor
-    fields = "__all__"
-    template_name = "news/redactor_form.html"
-    success_url = reverse_lazy("news:redactor-list")
-
-
-class RedactorDeleteView(LoginRequiredMixin, generic.DeleteView):
-    model = Redactor
-    template_name = "news/redactor_confirm_delete.html"
-    success_url = reverse_lazy("news:redactor-list")
