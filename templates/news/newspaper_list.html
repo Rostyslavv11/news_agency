@@ -1,7 +1,12 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
   {% if newspaper_list %}
+    <form method="get" action="" class="form-inline" role="search">
+    {{ search_form|crispy }}
+    <input type="submit" class="btn btn-secondary" value="Find">
+    </form>
     <h1>Newspapers:</h1>
     <a href="{% url 'news:newspaper-create' %}" class="btn btn-primary link-to-page">
       Create

@@ -1,7 +1,12 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
   {% if redactor_list %}
+    <form method="get" action="" class="form-inline" role="search">
+    {{ search_form|crispy }}
+    <input type="submit" class="btn btn-secondary" value="Find">
+    </form>
     <h1>Redactors:</h1>
     <ul>
       {% for redactor in redactor_list %}
