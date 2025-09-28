@@ -20,7 +20,5 @@
         <p>No newspapers!</p>
       {% endif %}  
       )</p>
-    <a href="{% url 'news:redactor-update' pk=redactor.id %}" class="btn btn-warning">Update</a>
-    <a href="{% url 'news:redactor-delete' pk=redactor.id %}" class="btn btn-danger">Delete</a>
   {% endif %}
 {% endblock %}
