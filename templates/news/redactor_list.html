@@ -3,9 +3,6 @@
 {% block content %}
   {% if redactor_list %}
     <h1>Redactors:</h1>
-    <a href="{% url 'news:redactor-create' %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
     <ul>
       {% for redactor in redactor_list %}
         <li>
