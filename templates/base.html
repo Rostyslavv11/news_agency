@@ -1,40 +1,51 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    {% block title %}<title>News agency</title>{% endblock %}
-    {% load static %}
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Primary Meta Tags -->
+    <title>News Agency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="News Agency">
+    <meta name="author" content="Rostyslav">
+    <meta name="description" content="Fresh news, topics, publications, and editors.">
+  
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/favicon.ico' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    
     <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-dym/YkFZrOeK7vG1v0SxqF1qgX1cPpQn9Y0sU8Yd9yq1rOa1rJ3n7pGvQm1p3H3rWbN6j0J9s1bq9+Z0Zr3aQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Pixel CSS -->
+    <link type="text/css" href="{% static 'css/pixel.css' %}" rel="stylesheet">
+    
 </head>
 
-<body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-2">
+<body class="layout">
 
-            {% block sidebar %}
-                {% include "includes/sidebar.html" %}
-            {% endblock %}
+  {% block header %}
+  
+    {% include 'includes/sidebar.html' %}
+  
+  {% endblock header %}
 
-        </div>
-        <div class="col-sm-10 ">
+  {% block content %}{% endblock content %}
 
-            {% block content %}{% endblock %}
+  {% block footer %}
+  
+    {% include 'includes/footer.html' %}
+  
+  {% endblock footer %}
 
-            {% block pagination %}
-                {% include "includes/pagination.html" %}
-            {% endblock %}
+  {% include 'includes/scripts.html' %}
+  {% block javascripts %}{% endblock javascripts %}
 
-        </div>
-    </div>
-</div>
+
 </body>
 
 </html>
