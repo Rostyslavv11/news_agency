@@ -1,0 +1,444 @@
+[
+{
+    "model": "news.topic",
+    "pk": 1,
+    "fields": {
+        "name": "Politics"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 2,
+    "fields": {
+        "name": "Economy"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 3,
+    "fields": {
+        "name": "Technology"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 4,
+    "fields": {
+        "name": "Sports"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 5,
+    "fields": {
+        "name": "Culture"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 6,
+    "fields": {
+        "name": "Science"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 7,
+    "fields": {
+        "name": "Health"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 8,
+    "fields": {
+        "name": "Education"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 9,
+    "fields": {
+        "name": "Environment"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 10,
+    "fields": {
+        "name": "World News"
+    }
+},
+{
+    "model": "news.topic",
+    "pk": 11,
+    "fields": {
+        "name": "Test Topic"
+    }
+},
+{
+    "model": "news.newspaper",
+    "pk": 1,
+    "fields": {
+        "title": "Global Daily",
+        "content": "A roundup of major global events and politics.",
+        "published_date": "2025-09-15",
+        "publishers": [
+            2,
+            3,
+            11
+        ]
+    }
+},
+{
+    "model": "news.newspaper",
+    "pk": 2,
+    "fields": {
+        "title": "Science & Health Weekly",
+        "content": "Science and health in focus",
+        "published_date": "2025-09-15",
+        "publishers": [
+            4,
+            7
+        ]
+    }
+},
+{
+    "model": "news.newspaper",
+    "pk": 3,
+    "fields": {
+        "title": "EcoFuture Times",
+        "content": "Environment and technoligy for a sustainable world",
+        "published_date": "2025-09-15",
+        "publishers": [
+            9,
+            10
+        ]
+    }
+},
+{
+    "model": "news.newspaper",
+    "pk": 4,
+    "fields": {
+        "title": "Culture & Sports Digest",
+        "content": "Latest from arts and sports",
+        "published_date": "2025-09-15",
+        "publishers": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "news.newspaper",
+    "pk": 5,
+    "fields": {
+        "title": "Education and Economy Review",
+        "content": "Education systems and markets analysis.",
+        "published_date": "2025-09-15",
+        "publishers": [
+            2,
+            8
+        ]
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 1,
+    "fields": {
+        "content": "Elections and policies shaping the world",
+        "topic": 1,
+        "newspaper": 1
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 2,
+    "fields": {
+        "content": "Highlights from around the globe",
+        "topic": 10,
+        "newspaper": 1
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 3,
+    "fields": {
+        "content": "Breakthrought in quantum computing",
+        "topic": 6,
+        "newspaper": 2
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 4,
+    "fields": {
+        "content": "New vaccines and medical research",
+        "topic": 7,
+        "newspaper": 2
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 5,
+    "fields": {
+        "content": "Climate change effects in 2025",
+        "topic": 9,
+        "newspaper": 3
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 6,
+    "fields": {
+        "content": "Green energy innovatios",
+        "topic": 3,
+        "newspaper": 3
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 7,
+    "fields": {
+        "content": "Film festivals and theatre premieres",
+        "topic": 5,
+        "newspaper": 4
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 8,
+    "fields": {
+        "content": "Highlights from international tournaments",
+        "topic": 4,
+        "newspaper": 4
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 9,
+    "fields": {
+        "content": "The rise of online learning platforms",
+        "topic": 8,
+        "newspaper": 5
+    }
+},
+{
+    "model": "news.newspapertopic",
+    "pk": 10,
+    "fields": {
+        "content": "Stock market and global trade updates",
+        "topic": 2,
+        "newspaper": 5
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$OGIw2HqPcQnNDjaORwRDHD$ZckfEoyAfl32XNWIg/uS5HeF0zSZ+6L6BXMdTmbE33Y=",
+        "last_login": "2025-09-30T21:11:37.535Z",
+        "is_superuser": true,
+        "username": "rostyslavv1",
+        "first_name": "",
+        "last_name": "",
+        "email": "rost.kop.200.5@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-09-14T14:46:06.790Z",
+        "years_of_experience": 0,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$req8CPQttimznkLY8pjXeT$cwkC+Jo3KhDR8UUIAUl7DYZEadLbDaSeHmAwejnV0ks=",
+        "last_login": "2025-10-02T20:55:11.455Z",
+        "is_superuser": false,
+        "username": "jdoe",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "jdoe@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:08:08.802Z",
+        "years_of_experience": 5,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$QhKO0H0GmPZkYJlRymik5D$+vKJFUB8UU2qMclN7V92lV6E/JjGzX38nGLfKdwfvXA=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "asmith",
+        "first_name": "Alice",
+        "last_name": "Smith",
+        "email": "asmith@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:09:27.591Z",
+        "years_of_experience": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$YbaSao9BUQHuNy50DrV6Jn$rvKbq6KdaYG7LHHZqSaB386E25DDXmNEmz5vKkb0qdk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "bwilson",
+        "first_name": "Bob",
+        "last_name": "Wilson",
+        "email": "bwilson@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:10:44.152Z",
+        "years_of_experience": 7,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$xNq8Ci1nrewL7WA9Q9NYNT$dfCjwu69ctMNFGoK/uJCRdd7yyQAeUOl6RZhnhhG7eM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "cjohnson",
+        "first_name": "Clara",
+        "last_name": "Johnson",
+        "email": "cjohnson@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:10:44.550Z",
+        "years_of_experience": 2,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$FWZDkHbruuNGz35VrEZVUk$+Ae4wci2b4qongOCvF4UQ3Lr4qiXJXlW8CCpIK1OR+4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "dlee",
+        "first_name": "David",
+        "last_name": "Lee",
+        "email": "dlee@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:10:44.927Z",
+        "years_of_experience": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$bM4eSmLp4FXc1LXHgYCsVZ$oxcLrNdTonoEEm4qPdMoUrcI8Eogrn9Y6ySDf6jNufs=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emartin",
+        "first_name": "Emma",
+        "last_name": "Martin",
+        "email": "emartin@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:10:45.309Z",
+        "years_of_experience": 4,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$FQ5n95LfEtDy9KPOC0offG$CG0TPMgy5hbZoEQsbq1KCaceyDDUEYnXsxtw6krRrNU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "fwhite",
+        "first_name": "Frank",
+        "last_name": "White",
+        "email": "fwhite@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:10:45.698Z",
+        "years_of_experience": 6,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$vKER5rEqk6VpOTxKCNmDv7$f6DYwfSsvrz2pJi/ecHybGQ3AxCmNgvxcZMt0IWr6rI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "gwalker",
+        "first_name": "Grace",
+        "last_name": "Walker",
+        "email": "gwalker@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:10:46.110Z",
+        "years_of_experience": 8,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$mDucXqOrUkPRq6ILu44b1L$0WKas5X1/HIbC+MwmARt4IgcT457MJcdNr7oTQmXuIE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hmiller",
+        "first_name": "Henry",
+        "last_name": "Miller",
+        "email": "hmiller@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:10:46.514Z",
+        "years_of_experience": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "news.redactor",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$wtJMM1cur3cs8Qc4hHXeZb$oxPMnYWq65rylvZZo9CJN4XCHYpMwBcwyjTX4QYgv2k=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ikim",
+        "first_name": "Isabella",
+        "last_name": "Kim",
+        "email": "ikim@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-14T16:10:46.940Z",
+        "years_of_experience": 9,
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
