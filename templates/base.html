@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Primary Meta Tags -->
+    <title>News Agency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="News Agency">
+    <meta name="author" content="Rostyslav">
+    <meta name="description" content="Fresh news, topics, publications, and editors.">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon.ico' %}">
+  
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/favicon.ico' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-dym/YkFZrOeK7vG1v0SxqF1qgX1cPpQn9Y0sU8Yd9yq1rOa1rJ3n7pGvQm1p3H3rWbN6j0J9s1bq9+Z0Zr3aQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Pixel CSS -->
+    <link type="text/css" href="{% static 'css/pixel.css' %}" rel="stylesheet">
+    
+</head>
+
+<body class="layout">
+
+  {% block header %}
+  
+    {% include 'includes/sidebar.html' %}
+  
+  {% endblock header %}
+
+  {% block content %}{% endblock content %}
+
+  {% block footer %}
+  
+    {% include 'includes/footer.html' %}
+  
+  {% endblock footer %}
+
+  {% include 'includes/scripts.html' %}
+  {% block javascripts %}{% endblock javascripts %}
+
+
+</body>
+
+</html>

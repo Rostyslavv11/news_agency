@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if topic %}
+    <h1>{{ topic.name }} (All newspapers that have this topic)</h1>
+    <ul>
+      {% for new in newspapers_of_topic %}
+        <li>{{ new }}</li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'news:topic-update' pk=topic.id %}" class="btn btn-warning">Update</a>
+    <a href="{% url 'news:topic-delete' pk=topic.id %}" class="btn btn-danger">Delete</a>
+  {% endif %}
+{% endblock %}

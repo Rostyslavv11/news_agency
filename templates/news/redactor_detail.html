@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if redactor %}
+    <h1>{{ redactor.username }}</h1>
+    
+    <p>First name: ({{ redactor.first_name }})</p>
+    
+    <p>Last name: ({{ redactor.last_name }})</p>
+    
+    <p>Redactor newspapers: 
+      (
+      {% if redactor.newspapers %}
+      <ul>
+      {% for red in redactor.newspapers.all %}
+        <li>{{ red }}</li>
+      {% endfor %}
+      </ul>
+      {% else %}
+        <p>No newspapers!</p>
+      {% endif %}  
+      )</p>
+  {% endif %}
+{% endblock %}

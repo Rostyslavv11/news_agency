@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if newspaper %}
+    <h1>{{ newspaper.title }}</h1>
+    
+    <p>Content: ({{ newspaper.content }})</p>
+    
+    <p>Published: ({{ newspaper.published_date }})</p>
+    
+    <p>Topics: 
+      (
+      {% if newspaper.topics %}
+      <ul>
+      {% for topic in newspaper.topics.all %}
+        <li>{{ topic }}</li>
+      {% endfor %}
+      </ul>
+      {% else %}
+        <p>No topics in newspaper!</p>
+      {% endif %}  
+      )</p>
+    
+    <p>Redactors: 
+      (
+      {% if newspaper.publishers %}
+      <ul>
+      {% for red in newspaper.publishers.all %}
+        <li>{{ red }}</li>
+      {% endfor %}
+      </ul>
+      {% else %}
+        <p>No redactors in newspaper!</p>
+      {% endif %}
+      )</p>
+    {% if can_edit %}
+      <a href="{% url 'news:newspaper-update' pk=newspaper.id %}" class="btn btn-warning">Update</a>
+      <a href="{% url 'news:newspaper-delete' pk=newspaper.id %}" class="btn btn-danger">Delete</a>
+    {% endif %}  
+  {% endif %}
+{% endblock %}
